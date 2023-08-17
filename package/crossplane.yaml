@@ -1,10 +1,36 @@
 apiVersion: meta.pkg.crossplane.io/v1alpha1
 kind: Provider
 metadata:
-  name: provider-template
+  name: provider-test
   annotations:
     meta.crossplane.io/maintainer: Crossplane Maintainers <info@crossplane.io>
-    meta.crossplane.io/source: github.com/crossplane/provider-template
+    meta.crossplane.io/source: github.com/charlestai66/provider-test
     meta.crossplane.io/license: Apache-2.0
     meta.crossplane.io/description: |
-      A template that can be used to create Crossplane providers.
+      A test that can be used to create Crossplane providers.
+spec:
+  crossplane:
+    version: ">=v1.0.0"
+  controller:
+    image: docker.intuit.com/personal/ctai2/crossplane-provider/build-bf24ec8f/provider-test-amd64:latest
+    imagePullPolicy: Always
+    permissionRequests:
+    - apiGroups:
+      - ""
+      resources:
+      - namespaces
+      verbs:
+      - '*'
+    # permissionRequests:
+    # - apiGroups:
+    #   - apiextensions.crossplane.io
+    #   resources:
+    #   - compositions
+    #   verbs:
+    #   - get
+    #   - list
+    #   - create
+    #   - update
+    #   - patch
+    #   - watch
+
