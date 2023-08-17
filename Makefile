@@ -3,7 +3,9 @@
 PROJECT_NAME := provider-test
 PROJECT_REPO := github.com/charlestai66/$(PROJECT_NAME)
 
-PLATFORMS ?= linux_amd64 linux_arm64
+# PLATFORMS ?= linux_amd64 linux_arm64
+PLATFORMS ?= linux_amd64
+
 -include build/makelib/common.mk
 
 # ====================================================================================
