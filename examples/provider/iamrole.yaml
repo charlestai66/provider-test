@@ -1,0 +1,18 @@
+apiVersion: iammanager.keikoproj.io/v1alpha1
+kind: Iamrole
+metadata:
+  annotations:
+    iam.amazonaws.com/irsa-service-account: 
+    iammanager.keikoproj.io/tags: intuit:asset_id=4903311687491030407
+  finalizers:
+  - iamrole.finalizers.iammanager.keikoproj.io
+  name: iamrole
+  namespace: dataproc-strmprocess-kakfaconnectargocd-usw2-e2e
+spec:
+  PolicyDocument:
+    Statement:
+    - Action:
+      - ec2:*
+      Effect: Deny
+      Resource:
+      - '*'

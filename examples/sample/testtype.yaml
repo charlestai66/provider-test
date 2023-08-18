@@ -5,7 +5,8 @@ metadata:
 spec:
   forProvider:
     configurableField: test
-    policyId: p-71120mgjanqn
-    sslPath: SSLStore/uw2/msk/ebus-sbseg-sl-e2e/sppplatuw28df8
+    apiEndPoint: vkm-e2e.ps.idps.a.intuit.com
+    policyId: p-3l5hicr3og4h
+    sslPath: spp/sppblackbirdtest/e2e/appsecret
   providerConfigRef:
     name: test-provider-config-in-cluster

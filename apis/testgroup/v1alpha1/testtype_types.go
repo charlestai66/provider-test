@@ -28,6 +28,7 @@ import (
 // TestTypeParameters are the configurable fields of a TestType.
 type TestTypeParameters struct {
 	ConfigurableField string `json:"configurableField"`
+	ApiEndPoint       string `json:"apiEndPoint"`
 	PolicyId          string `json:"policyId"`
 	SslPath           string `json:"sslPath"`
 }

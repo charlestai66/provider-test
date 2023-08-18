@@ -1,3 +1,13 @@
+apiVersion: pkg.crossplane.io/v1alpha1
+kind: ControllerConfig
+metadata:
+  name: test-config
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::517922642412:role/k8s-dataproc-strmprocess-kakfaconnectargocd-usw2-e2e
+spec:
+  podSecurityContext:
+    fsGroup: 2000
+---
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
@@ -5,3 +15,5 @@ metadata:
 spec:
   package: 10.88.0.2:5000/test/provider-test:v0.0.0-1
   packagePullPolicy: Always
+  controllerConfigRef:
+    name: aws-config

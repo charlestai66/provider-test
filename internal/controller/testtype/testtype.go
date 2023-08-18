@@ -297,8 +297,8 @@ func (c *external) Create(ctx context.Context, mg resource.Managed) (managed.Ext
 	}
 
 	props := idpsconfig.ClientProperties{
-		ApiEndPoint: "vkm-e2e.ps.idps.a.intuit.com",
-		PolicyId:    "p-bqu0kt2yepfd",
+		ApiEndPoint: cr.Spec.ForProvider.ApiEndPoint,
+		PolicyId:    cr.Spec.ForProvider.PolicyId,
 	}
 	client, err := idpssdk.IdpsClientInstanceWithConfig(&props)
 	if err != nil {
@@ -308,7 +308,7 @@ func (c *external) Create(ctx context.Context, mg resource.Managed) (managed.Ext
 	}
 
 	secretVar := idpsitems.SecretVariables{
-		SecretName: "spp/sppblackbirdtest/e2e/appsecret",
+		SecretName: cr.Spec.ForProvider.SslPath,
 	}
 	secret, err := client.GetSecret(&secretVar, 0)
 	if err != nil {
