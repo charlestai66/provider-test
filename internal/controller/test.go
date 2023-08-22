@@ -21,6 +21,7 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 
 	"github.com/charlestai66/provider-test/internal/controller/config"
+	"github.com/charlestai66/provider-test/internal/controller/kafkasecret"
 	"github.com/charlestai66/provider-test/internal/controller/testtype"
 )
 
@@ -30,6 +31,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		config.Setup,
 		testtype.Setup,
+		kafkasecret.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

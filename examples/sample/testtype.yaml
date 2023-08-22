@@ -7,6 +7,6 @@ spec:
     configurableField: test
     apiEndPoint: vkm-e2e.ps.idps.a.intuit.com
     policyId: p-3l5hicr3og4h
-    sslPath: spp/sppblackbirdtest/e2e/appsecret
+    sslPath: spp/sppblackbirdtest/e2e/app-secret
   providerConfigRef:
     name: test-provider-config-in-cluster

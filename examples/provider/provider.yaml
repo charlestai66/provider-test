@@ -13,7 +13,8 @@ kind: Provider
 metadata:
   name: test-provider-test
 spec:
-  package: 10.88.0.2:5000/test/provider-test:v0.0.0-1
+  package: docker.intuit.com/personal/ctai2/crossplane-provider/test/provider-test:v0.0.0-4.gcc2f371
   packagePullPolicy: Always
+  ignoreCrossplaneConstraints: true
   controllerConfigRef:
-    name: aws-config
+    name: test-config

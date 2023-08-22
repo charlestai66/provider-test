@@ -1,0 +1,16 @@
+# Make sure provider-kubernetes has enough permissions to install your objects into cluster
+#
+# You can give admin permissions by running:
+# SA=$(kubectl -n crossplane-system get sa -o name | grep provider-kubernetes | sed -e 's|serviceaccount\/|crossplane-system:|g')
+# kubectl create clusterrolebinding provider-kubernetes-admin-binding --clusterrole cluster-admin --serviceaccount="${SA}"
+apiVersion: test.crossplane.io/v1alpha1
+kind: ProviderConfig
+metadata:
+  name: test-provider-config-idp-spp-dl-ppd-usw2-k8s
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: dataproc-strmprocess-kakfaconnectargocd-usw2-e2e
+      name: cluster-config-idp-spp-dl-ppd-usw2-k8s
+      key: kubeconfig

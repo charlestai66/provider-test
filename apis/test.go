@@ -20,6 +20,7 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
+	kcpavedv1alpha1 "github.com/charlestai66/provider-test/apis/kcpaved/v1alpha1"
 	testgroupv1alpha1 "github.com/charlestai66/provider-test/apis/testgroup/v1alpha1"
 	testv1alpha1 "github.com/charlestai66/provider-test/apis/v1alpha1"
 )
@@ -29,6 +30,7 @@ func init() {
 	AddToSchemes = append(AddToSchemes,
 		testv1alpha1.SchemeBuilder.AddToScheme,
 		testgroupv1alpha1.SchemeBuilder.AddToScheme,
+		kcpavedv1alpha1.SchemeBuilder.AddToScheme,
 	)
 }
 
