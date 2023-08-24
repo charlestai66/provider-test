@@ -371,6 +371,10 @@ func (c *external) Create(ctx context.Context, mg resource.Managed) (managed.Ext
 		fmt.Printf("Secret not created: %+v. error: %+v\n", secret, err)
 	} else {
 		fmt.Printf("Secret created: %+v\n", secret)
+
+		cr.SetConditions(xpv1.Available())
+
+		fmt.Printf("Secret condition updated: %+v\n", xpv1.Available())
 	}
 	// ~CT
 
@@ -411,6 +415,10 @@ func (c *external) Update(ctx context.Context, mg resource.Managed) (managed.Ext
 		fmt.Printf("Secret not updated: %+v. error: %+v\n", secret, err)
 	} else {
 		fmt.Printf("Secret updated: %+v\n", secret)
+
+		cr.SetConditions(xpv1.Available())
+
+		fmt.Printf("Secret condition updated: %+v\n", xpv1.Available())
 	}
 	// ~CT
 

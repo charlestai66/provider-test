@@ -11,6 +11,6 @@ spec:
   credentials:
     source: Secret
     secretRef:
-      namespace: dataproc-strmprocess-kakfaconnectargocd-usw2-e2e
-      name: cluster-config-idp-spp-dl-ppd-usw2-k8s
+      namespace: dataproc-strmprocess-crossplane-usw2-e2e
+      name: kubeconfig-idp-spp-dl-ppd-usw2-k8s
       key: kubeconfig

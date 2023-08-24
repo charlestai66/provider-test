@@ -1,9 +1,9 @@
 apiVersion: pkg.crossplane.io/v1alpha1
 kind: ControllerConfig
 metadata:
-  name: test-config
+  name: test-provider-controller-config
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::517922642412:role/k8s-dataproc-strmprocess-kakfaconnectargocd-usw2-e2e
+    eks.amazonaws.com/role-arn: arn:aws:iam::517922642412:role/k8s-dataproc-strmprocess-crossplane-usw2-e2e
 spec:
   podSecurityContext:
     fsGroup: 2000
@@ -17,4 +17,4 @@ spec:
   packagePullPolicy: Always
   ignoreCrossplaneConstraints: true
   controllerConfigRef:
-    name: test-config
+    name: test-provider-controller-config
